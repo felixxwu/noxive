@@ -1,7 +1,7 @@
 export default [
     {
         title: "Mojito EP",
-        tag: "funky",
+        tag: "funky / house",
         art: "https://noxive.com/art250/mojito.jpg",
         colour: "6ae675",
         spotify: "https://open.spotify.com/album/6cUzy3XGfHqzxEyf0QGQxh",

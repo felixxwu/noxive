@@ -1,6 +1,12 @@
 <template>
     <span class="preview" v-if="!isSelected">
-        <img class="art animated zoomIn" @click="selectSong(number)" :src="song.art">
+        <img
+            class="art animated zoomIn"
+            @click="selectSong(number)"
+            :src="song.art"
+            :alt="song.title"
+            tabindex="0"
+        >
         <div class="tag">#{{ song.tag }}</div>
     </span>
     <div class="selected animated zoomIn shadow" v-else>
