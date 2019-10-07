@@ -17,7 +17,7 @@ export default [
         colour: "deb9e2",
         spotify: "https://spoti.fi/2NxrqKu",
         soundcloud: "https://soundcloud.com/noxive/cruising?in=noxive/sets/funky",
-        youtube: "https://www.youtube.com/watch?v=2bwv0n0Pc0k&list=PLOZyhPV9JCou47tEa6AA-5LXXFXTK3y5m",
+        youtube: "https://www.youtube.com/watch?v=pRgyoU8cb3c&list=PLOZyhPV9JCou47tEa6AA-5LXXFXTK3y5m",
         apple: "https://apple.co/2y8SlHH",
         embed: '<iframe width="100%" height="320" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/842700302&color=%23ddb7df&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'
     },
