@@ -28,7 +28,7 @@ export default [
         colour: "bcbe6e",
         spotify: "https://spoti.fi/2GwRiWS",
         soundcloud: "https://soundcloud.com/noxive/wander?in=noxive/sets/chillout",
-        youtube: "https://www.youtube.com/watch?v=5V4ZYWIGlHg&list=PLOZyhPV9JCovAkmemDJd4R82IP3rz-_b1",
+        youtube: "https://www.youtube.com/watch?v=AfDE1tWVAxA&list=PLOZyhPV9JCou47tEa6AA-5LXXFXTK3y5m",
         apple: "https://apple.co/2MZQ9Zm",
         embed: '<iframe width="100%" height="320" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/847609835&color=%23b8b96c&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'
     },
