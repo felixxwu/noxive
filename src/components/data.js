@@ -1,7 +1,7 @@
 export default [
     {
         title: "Wander",
-        art: "https://noxive.com/art/wander.png",
+        art: "https://noxive.com/art250/wander.jpg",
         colour: "bcbe6e",
         spotify: "https://spoti.fi/2GwRiWS",
         soundcloud: "https://soundcloud.com/noxive/wander?in=noxive/sets/chillout",
@@ -11,7 +11,7 @@ export default [
     },
     {
         title: "Criusing",
-        art: "https://noxive.com/art/cruising.jpg",
+        art: "https://noxive.com/art250/cruising.jpg",
         colour: "deb9e2",
         spotify: "https://spoti.fi/2NxrqKu",
         soundcloud: "https://soundcloud.com/noxive/cruising?in=noxive/sets/funky",
@@ -21,7 +21,7 @@ export default [
     },
     {
         title: "Mojito EP",
-        art: "https://noxive.com/art/mojito.png",
+        art: "https://noxive.com/art250/mojito.jpg",
         colour: "6ae675",
         spotify: "https://open.spotify.com/album/6cUzy3XGfHqzxEyf0QGQxh",
         soundcloud: "https://soundcloud.com/noxive/sets/mojito-ep",
@@ -31,7 +31,7 @@ export default [
     },
     {
         title: "Teriyaki",
-        art: "https://noxive.com/art/teriyaki.png",
+        art: "https://noxive.com/art250/teriyaki.jpg",
         colour: "fff15c",
         spotify: "https://spoti.fi/2IYxRIE",
         soundcloud: "https://soundcloud.com/argofox/noxive-clive-teriyaki?in=noxive/sets/future-bass",
@@ -41,7 +41,7 @@ export default [
     },
     {
         title: "With You",
-        art: "https://noxive.com/art/withyou.jpg",
+        art: "https://noxive.com/art250/withyou.jpg",
         colour: "8dc4e2",
         spotify: "https://spoti.fi/2BaqwjY",
         soundcloud: "https://soundcloud.com/noxive/withyou",
@@ -51,7 +51,7 @@ export default [
     },
     {
         title: "Monsters In My Head",
-        art: "https://noxive.com/art/minh.jpg",
+        art: "https://noxive.com/art250/minh.jpg",
         colour: "4d0000",
         spotify: "https://spoti.fi/2OU7TJM",
         soundcloud: "https://soundcloud.com/argofox/noxive-monsters-in-my-head?in=noxive/sets/bass",
@@ -61,7 +61,7 @@ export default [
     },
     {
         title: "Another World",
-        art: "https://noxive.com/art/anotherworld.jpg",
+        art: "https://noxive.com/art250/anotherworld.jpg",
         colour: "524d49",
         spotify: "https://spoti.fi/2LBSnjj",
         soundcloud: "https://soundcloud.com/argofox/noxive-another-world?in=noxive/sets/future-bass",
@@ -71,7 +71,7 @@ export default [
     },
     {
         title: "Rain",
-        art: "https://noxive.com/art/rain.jpg",
+        art: "https://noxive.com/art250/rain.jpg",
         colour: "323232",
         spotify: "https://open.spotify.com/album/6fdugJYFWLtRHSc0tsu6BN",
         soundcloud: "https://soundcloud.com/noxive/rain?in=noxive/sets/chillout",
@@ -81,14 +81,14 @@ export default [
     },
     {
         title: "I Like Me Better",
-        art: "https://noxive.com/art/ilikemebetter.jpg",
+        art: "https://noxive.com/art250/ilikemebetter.jpg",
         colour: "f2f3f5",
         soundcloud: "https://soundcloud.com/noxive/ilikemebetter",
         embed: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/334329014&color=%23cd7a95&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'
     },
     {
         title: "Lone Soldier",
-        art: "https://noxive.com/art/lonesoldier.jpg",
+        art: "https://noxive.com/art250/lonesoldier.jpg",
         colour: "326182",
         spotify: "https://open.spotify.com/album/1ywMHYpziPGhBidCKsBxZm",
         soundcloud: "https://soundcloud.com/noxive/lonesoldier?in=noxive/sets/future-bass",
@@ -98,7 +98,7 @@ export default [
     },
     {
         title: "Delight EP",
-        art: "https://noxive.com/art/delight.jpg",
+        art: "https://noxive.com/art250/delight.jpg",
         colour: "09fcff",
         spotify: "https://open.spotify.com/album/7a0llfiI6VKehMNz2CJxOv",
         soundcloud: "https://soundcloud.com/noxive/sets/delightep",
@@ -108,7 +108,7 @@ export default [
     },
     {
         title: "Fractals",
-        art: "https://noxive.com/art/fractals.jpg",
+        art: "https://noxive.com/art250/fractals.jpg",
         colour: "596c94",
         spotify: "https://open.spotify.com/album/5dloQh5u19miFyyvhh9ENP",
         soundcloud: "https://soundcloud.com/argofox/noxive-justin-jet-zorbas-fractals?in=noxive/sets/future-bass",
@@ -118,7 +118,7 @@ export default [
     },
     {
         title: "Alpha Centauri",
-        art: "https://noxive.com/art/alpha.jpg",
+        art: "https://noxive.com/art250/alpha.jpg",
         colour: "3b5970",
         spotify: "https://open.spotify.com/album/2rq0XBYvTwN1BppmO3ODgA",
         soundcloud: "https://soundcloud.com/traphoodfamily/noxive-alpha-centauri?in=noxive/sets/future-bass",
@@ -128,14 +128,14 @@ export default [
     },
     {
         title: "Show Out",
-        art: "https://noxive.com/art/showout.png",
+        art: "https://noxive.com/art250/showout.jpg",
         colour: "60bfae",
         soundcloud: "https://soundcloud.com/noxive/showout?in=noxive/sets/future-bass",
         embed: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/280297547&color=%23463e5f&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'
     },
     {
         title: "Cosmos",
-        art: "https://noxive.com/art/cosmos.jpg",
+        art: "https://noxive.com/art250/cosmos.jpg",
         colour: "e8e9e4",
         spotify: "https://open.spotify.com/track/5HSLkt2PQ3HBCsruMEklmf",
         soundcloud: "https://soundcloud.com/noxive/cosmos?in=noxive/sets/dnb",
@@ -145,7 +145,7 @@ export default [
     },
     {
         title: "Overseas",
-        art: "https://noxive.com/art/overseas.jpg",
+        art: "https://noxive.com/art250/overseas.jpg",
         colour: "c9d1c5",
         spotify: "https://open.spotify.com/album/1ZYdVqQfRpktfMQHPjIPff",
         soundcloud: "https://soundcloud.com/argofox/noxive-overseas?in=noxive/sets/future-bass",
@@ -155,7 +155,7 @@ export default [
     },
     {
         title: "Cure",
-        art: "https://noxive.com/art/cure.png",
+        art: "https://noxive.com/art250/cure.jpg",
         colour: "672c05",
         spotify: "https://open.spotify.com/album/4nSarNZVCC4PoLcRGtAebo",
         soundcloud: "https://soundcloud.com/noxive/cure?in=noxive/sets/chillout",
@@ -165,7 +165,7 @@ export default [
     },
     {
         title: "Silver",
-        art: "https://noxive.com/art/silver.jpg",
+        art: "https://noxive.com/art250/silver.jpg",
         colour: "c3c5c4",
         spotify: "https://open.spotify.com/album/53yq3cFEKfx5iA3FwVVBhn",
         soundcloud: "https://soundcloud.com/traphoodfamily/noxive-silver?in=noxive/sets/future-bass",
@@ -175,7 +175,7 @@ export default [
     },
     {
         title: "Predator EP",
-        art: "https://noxive.com/art/predatorep.png",
+        art: "https://noxive.com/art250/predatorep.jpg",
         colour: "5c2c2c",
         spotify: "https://open.spotify.com/album/6Yr6OxTSMHRlopHyETuV2T",
         soundcloud: "https://soundcloud.com/noxive/predator?in=noxive/sets/bass",
@@ -185,7 +185,7 @@ export default [
     },
     {
         title: "Days Like These",
-        art: "https://noxive.com/art/dlt.JPG",
+        art: "https://noxive.com/art250/dlt.jpg",
         colour: "6a6569",
         spotify: "https://open.spotify.com/track/77dcP4ORY3bFPLKH24YRg1",
         soundcloud: "https://soundcloud.com/noxive/days-like-these?in=noxive/sets/chillout",
@@ -195,7 +195,7 @@ export default [
     },
     {
         title: "A New Beginning",
-        art: "https://noxive.com/art/anewbeginning.jpg",
+        art: "https://noxive.com/art250/anewbeginning.jpg",
         colour: "24133a",
         spotify: "https://open.spotify.com/track/71tdzHk782oikZ8nufYJEG",
         soundcloud: "https://soundcloud.com/noxive/a-new-beginning?in=noxive/sets/dnb",
@@ -205,7 +205,7 @@ export default [
     },
     {
         title: "Coexist",
-        art: "https://noxive.com/art/coexist.png",
+        art: "https://noxive.com/art250/coexist.jpg",
         colour: "ececec",
         soundcloud: "https://soundcloud.com/noxive/coexist?in=noxive/sets/dnb",
         youtube: "https://youtu.be/ToIteSEGKXQ?list=PLOZyhPV9JCou47tEa6AA-5LXXFXTK3y5m",
@@ -213,7 +213,7 @@ export default [
     },
     {
         title: "Sensation",
-        art: "https://noxive.com/art/sensation.jpg",
+        art: "https://noxive.com/art250/sensation.jpg",
         colour: "feb96e",
         spotify: "https://open.spotify.com/track/0oYHsg0qgdYSgSU3VVS1ZI",
         soundcloud: "https://soundcloud.com/noxive/sensation",
@@ -223,7 +223,7 @@ export default [
     },
     {
         title: "Stranded",
-        art: "https://noxive.com/art/stranded.jpg",
+        art: "https://noxive.com/art250/stranded.jpg",
         colour: "62b2cb",
         spotify: "https://open.spotify.com/track/0ceW2RVd0vpI9bAK7ItNLY",
         soundcloud: "https://soundcloud.com/noxive/stranded?in=noxive/sets/chillout",
@@ -233,7 +233,7 @@ export default [
     },
     {
         title: "Be Easy",
-        art: "https://noxive.com/art/beeasy.jpg",
+        art: "https://noxive.com/art250/beeasy.jpg",
         colour: "38404d",
         soundcloud: "https://soundcloud.com/noxive/be-easy?in=noxive/sets/future-bass",
         youtube: "https://youtu.be/aN518OkY4C0?list=PLOZyhPV9JCou47tEa6AA-5LXXFXTK3y5m",
@@ -241,7 +241,7 @@ export default [
     },
     {
         title: "Home",
-        art: "https://noxive.com/art/home.jpg",
+        art: "https://noxive.com/art250/home.jpg",
         colour: "44321a",
         spotify: "https://open.spotify.com/album/3XZpl3aoPeDqlGjeNwvUiG",
         soundcloud: "https://soundcloud.com/noxive/home?in=noxive/sets/chillout",
@@ -251,7 +251,7 @@ export default [
     },
     {
         title: "The Heart Wants What It Wants",
-        art: "https://noxive.com/art/thwwiw.jpg",
+        art: "https://noxive.com/art250/thwwiw.jpg",
         colour: "9fa19b",
         soundcloud: "https://soundcloud.com/noxive/thwwiw?in=noxive/sets/future-bass",
         youtube: "https://youtu.be/MK9_iPffXnQ?list=PLOZyhPV9JCou47tEa6AA-5LXXFXTK3y5m",
@@ -259,7 +259,7 @@ export default [
     },
     {
         title: "Resilience",
-        art: "https://noxive.com/art/resilience.png",
+        art: "https://noxive.com/art250/resilience.jpg",
         colour: "5d4837",
         spotify: "https://open.spotify.com/track/2dJAphYCLYNuNos3eaqX2j",
         soundcloud: "https://soundcloud.com/noxive/resilience?in=noxive/sets/chillout",
@@ -269,7 +269,7 @@ export default [
     },
     {
         title: "Lights",
-        art: "https://noxive.com/art/lights.jpg",
+        art: "https://noxive.com/art250/lights.jpg",
         colour: "bf9565",
         soundcloud: "https://soundcloud.com/noxive/lights-remix?in=noxive/sets/future-bass",
         youtube: "https://youtu.be/DPuqfNNHx4Q?list=PLOZyhPV9JCou47tEa6AA-5LXXFXTK3y5m",
