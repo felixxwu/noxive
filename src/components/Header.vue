@@ -15,7 +15,7 @@
             <a id="youtube" href="https://www.youtube.com/playlist?list=PLOZyhPV9JCou47tEa6AA-5LXXFXTK3y5m">
                 <img class="link" src="../assets/youtube.svg" alt="youtube logo">
             </a>
-            <a id="facebook" href="https://noxive.com/facebook">
+            <a id="facebook" href="https://www.facebook.com/noxive">
                 <img class="link" src="../assets/facebook.svg" alt="facebook logo">
             </a>
         </div>

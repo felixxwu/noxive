@@ -51,7 +51,7 @@ export default {
     return {
       songs: data,
       animationDelay: 2000,
-      animationStep: 200,
+      animationStep: 100,
       selectedSong: null
     }
   },
@@ -80,7 +80,7 @@ body {
   background-color: black;
   color: white;
   text-align: center;
-  transition: 2s;
+  transition: 1s;
 }
 
 p {

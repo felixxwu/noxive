@@ -1,6 +1,7 @@
 <template>
-    <span v-if="!isSelected">
+    <span class="preview" v-if="!isSelected">
         <img class="art animated zoomIn" @click="selectSong(number)" :src="song.art">
+        <div class="tag">#{{ song.tag }}</div>
     </span>
     <div class="selected animated zoomIn shadow" v-else>
         <div v-html="song.embed"></div>
@@ -38,6 +39,17 @@ export default {
     width: 250px;
     padding: 20px;
     border-radius: 35px;
+}
+
+.preview {
+    display: inline-block;
+}
+
+.tag {
+    text-align: right;
+    margin-top: -15px;
+    padding-bottom: 15px;
+    padding-right: 30px;
 }
 
 img {
