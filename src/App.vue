@@ -13,9 +13,6 @@
       ></Song>
     </div>
     <p>
-      contact / promo: <a class="white" href="mailto:felix@noxive.com">felix@noxive.com</a>
-      <br>
-      <br>
       © Noxive {{ (new Date()).getYear() + 1900 }}
     </p>
   </div>
@@ -49,7 +46,7 @@ export default {
   },
   data() {
     return {
-      songs: data,
+      songs: data.songs,
       animationDelay: 2000,
       animationStep: 100,
       selectedSong: null
@@ -73,8 +70,11 @@ export default {
 </script>
 
 <style>
-body {
+* {
   font-family: 'Montserrat', sans-serif;
+}
+
+body {
   margin: 0;
   padding: 0;
   background-color: black;
@@ -85,10 +85,6 @@ body {
 
 p {
   padding: 50px;
-}
-
-#songs {
-  padding-top: 50px;
 }
 
 .song {

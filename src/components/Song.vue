@@ -5,6 +5,7 @@
             @click="selectSong(number)"
             :src="song.art"
             :alt="song.title"
+            :title="song.title"
             tabindex="0"
         >
         <div class="tag">#{{ song.tag }}</div>
