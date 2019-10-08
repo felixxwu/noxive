@@ -37,7 +37,8 @@ export default {
     setTimeout(() => {
       this.songs.forEach((element, index) => {
         setTimeout(() => {
-          document.getElementById(index).style.opacity = 1;
+          let el = document.getElementById(index);
+          if (el) el.style.opacity = 1;
         }, this.animationStep * index);
       });
     }, this.animationDelay);
