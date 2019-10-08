@@ -61,6 +61,12 @@ export default {
         document.body.style.backgroundColor = "black";
       } else {
         colour = "#" + darkenColour(this.songs[id].colour);
+        this.$nextTick(() => {
+          document.getElementById(id).scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        })
       }
       document.body.style.backgroundColor = colour;
       document.getElementById("chrometheme").setAttribute("content", colour)
@@ -97,7 +103,7 @@ p {
 }
 
 img, .shadow {
-  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.3));
 }
 
 /* ANIMATECSS ############################################################### */
@@ -105,6 +111,13 @@ img, .shadow {
 .animated {
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated-fast {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }

@@ -10,7 +10,7 @@
         >
         <div class="tag">#{{ song.tag }}</div>
     </span>
-    <div class="selected animated zoomIn shadow" v-else>
+    <div class="selected animated-fast zoomIn shadow" v-else>
         <div v-html="song.embed"></div>
         <a v-if="song.spotify" :href="song.spotify">
             <img class="link" src="../assets/spotify.svg" alt="spotify logo">

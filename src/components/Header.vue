@@ -1,6 +1,6 @@
 <template>
     <div id="header">
-        <img id="logo" class="animated fadeInUp" src="../assets/logo.svg" alt="Noxive logo" width="250">
+        <img @click="randomColour(false)" id="logo" class="animated fadeInUp" src="../assets/logo.svg" alt="Noxive logo">
         <br>
         <div id="links" class="animated fadeInUp">
             <a id="spotify" :href="data.links.spotify">
@@ -20,30 +20,31 @@
             </a>
         </div>
         <br>
-        <div id="about">
-            <div class="animated fadeInUp">
+        <div id="about" @click="expanded = !expanded; randomColour(!expanded)">
+            <button class="animated-fast fadeInUp shadow" v-if="!expanded">ABOUT</button>
+            <div v-else class="animated-fast fadeInUp">
                 Noxive is a solo electronic music producer and computer science student at Edinburgh, with releases ranging from funky disco to sombre piano and bassy dance tunes.
                 <br>
                 <br>
                 He has made numerous appearances on labels and YouTube channels such as
-                <a href="https://www.youtube.com/channel/UC56Qctnsu8wAyvzf4Yx6LIw" target="_blank">Argofox</a>,
-                <a href="https://soundcloud.com/traphoodfamily" target="_blank">TrapHood Family</a>,
-                <a href="https://www.youtube.com/user/ParadoxiumTV" target="_blank">Paradoxium</a>, and
-                <a href="https://www.youtube.com/user/Fantasyssmusic" target="_blank">The Soul of Wind</a>,
+                <a onclick="event.stopPropagation()" href="https://www.youtube.com/channel/UC56Qctnsu8wAyvzf4Yx6LIw" target="_blank">Argofox</a>,
+                <a onclick="event.stopPropagation()" href="https://soundcloud.com/traphoodfamily" target="_blank">TrapHood Family</a>,
+                <a onclick="event.stopPropagation()" href="https://www.youtube.com/user/ParadoxiumTV" target="_blank">Paradoxium</a>, and
+                <a onclick="event.stopPropagation()" href="https://www.youtube.com/user/Fantasyssmusic" target="_blank">The Soul of Wind</a>,
                 and has collaborated with artists such as
-                <a href="https://soundcloud.com/justin-jet-zorbas" target="_blank">Justin Jet Zorbas</a>,
-                <a href="https://soundcloud.com/onetrueclive" target="_blank">Clive™</a>,
-                <a href="https://spoti.fi/2Oq1Zym" target="_blank">Celia Brand-Freeman</a>, and
-                <a href="https://spoti.fi/2TyoDFv" target="_blank">Andrea Pinedo</a>.
+                <a onclick="event.stopPropagation()" href="https://soundcloud.com/justin-jet-zorbas" target="_blank">Justin Jet Zorbas</a>,
+                <a onclick="event.stopPropagation()" href="https://soundcloud.com/onetrueclive" target="_blank">Clive™</a>,
+                <a onclick="event.stopPropagation()" href="https://spoti.fi/2Oq1Zym" target="_blank">Celia Brand-Freeman</a>, and
+                <a onclick="event.stopPropagation()" href="https://spoti.fi/2TyoDFv" target="_blank">Andrea Pinedo</a>.
                 <br>
                 <br>
                 contact / promo:
-                <b class="all-copy">
+                <b onclick="event.stopPropagation()" class="all-copy">
                     felix@noxive.com
                 </b>
                 <br>
                 <br>
-                ♦
+                ◆
             </div>
         </div>
     </div>
@@ -51,6 +52,7 @@
 
 <script>
 import data from './data'
+import hslToRgb from './hslToRgb'
 
 export default {
     created() {
@@ -63,7 +65,20 @@ export default {
     },
     data() {
         return {
-            data: data
+            data: data,
+            expanded: false
+        }
+    },
+    methods: {
+        randomColour(black) {
+            if (black) {
+                document.body.style.backgroundColor = "black";
+                return;
+            }
+            let random = Math.random();
+            let colour = hslToRgb(random, 0.7, 0.35);
+            document.body.style.backgroundColor
+                = `rgb(${colour[0]},${colour[1]},${colour[2]})`;
         }
     },
 }
@@ -76,10 +91,24 @@ a {
     text-decoration: none;
 }
 
-#about > * {
+#about > div {
     padding: 30px;
     max-width: 600px;
     margin: auto;
+}
+
+button {
+    border: 1px white solid;
+    border-radius: 7px;
+    color: white;
+    background-color: transparent;
+    /* text-decoration: underline; */
+    font-weight: bold;
+    font-size: medium;
+    height: 40px;
+    padding: 10px;
+    margin: 30px;
+    cursor: pointer;
 }
 
 .all-copy {  
@@ -91,6 +120,8 @@ a {
 }
 
 #logo {
+    width: 280px;
+    cursor: pointer;
     padding: 20px;
 }
 
