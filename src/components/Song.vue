@@ -8,7 +8,7 @@
             :title="song.title"
             tabindex="0"
         >
-        <div class="tag">#{{ song.tag }}</div>
+        <div onclick="event.stopPropagation()" @click="selectTag(song.tag)" class="tag">#{{ song.tag }}</div>
     </span>
     <div class="selected animated-fast zoomIn shadow" v-else>
         <div v-html="song.embed"></div>
@@ -36,7 +36,8 @@ export default {
         song: Object,
         number: Number,
         selectSong: Function,
-        isSelected: Boolean
+        isSelected: Boolean,
+        selectTag: Function
     }
 }
 </script>
@@ -44,8 +45,8 @@ export default {
 <style lang="css" scoped>
 .art {
     width: 250px;
-    padding: 20px;
-    border-radius: 35px;
+    margin: 20px;
+    border-radius: 15px;
 }
 
 .preview {
@@ -57,6 +58,8 @@ export default {
     margin-top: -15px;
     padding-bottom: 15px;
     padding-right: 30px;
+    cursor: pointer;
+    z-index: 1;
 }
 
 img {

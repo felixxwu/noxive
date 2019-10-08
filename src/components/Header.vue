@@ -42,9 +42,8 @@
                 <b onclick="event.stopPropagation()" class="all-copy">
                     felix@noxive.com
                 </b>
-                <br>
-                <br>
-                ◆
+                <!-- ◆ -->
+                <h1>×</h1>
             </div>
         </div>
     </div>
@@ -52,9 +51,11 @@
 
 <script>
 import data from './data'
-import hslToRgb from './hslToRgb'
 
 export default {
+    props: {
+        randomColour: Function
+    },
     created() {
         setTimeout(() => {
             document.getElementById("links").style.display = "initial";
@@ -68,19 +69,7 @@ export default {
             data: data,
             expanded: false
         }
-    },
-    methods: {
-        randomColour(black) {
-            if (black) {
-                document.body.style.backgroundColor = "black";
-                return;
-            }
-            let random = Math.random();
-            let colour = hslToRgb(random, 0.7, 0.35);
-            document.body.style.backgroundColor
-                = `rgb(${colour[0]},${colour[1]},${colour[2]})`;
-        }
-    },
+    }
 }
 </script>
 
@@ -98,7 +87,7 @@ a {
 }
 
 button {
-    border: 1px white solid;
+    border: 2px white solid;
     border-radius: 7px;
     color: white;
     background-color: transparent;

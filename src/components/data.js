@@ -9,7 +9,7 @@ export default {
     songs: [
         {
             title: "Mojito EP",
-            tag: "funky / house",
+            tag: "funky",
             art: "https://noxive.com/art250/mojito.jpg",
             colour: "6ae675",
             spotify: "https://open.spotify.com/album/6cUzy3XGfHqzxEyf0QGQxh",
@@ -20,7 +20,7 @@ export default {
         },
         {
             title: "Criusing",
-            tag: "disco",
+            tag: "funky",
             art: "https://noxive.com/art250/cruising.jpg",
             colour: "deb9e2",
             spotify: "https://spoti.fi/2NxrqKu",

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Header></Header>
+    <Header :randomColour="randomColour"></Header>
+    <h1 @click="selectTag(null)" v-if="selectedTag">filter: #{{ selectedTag }} ×</h1>
     <div id="songs">
       <Song
         v-for="(song, index) in songs" :key="index"
@@ -10,9 +11,10 @@
         :number="index"
         :selectSong="selectSong"
         :isSelected="selectedSong == index"
+        :selectTag="selectTag"
       ></Song>
     </div>
-    <p>
+    <p @click="gnomed">
       © Noxive {{ (new Date()).getYear() + 1900 }}
     </p>
   </div>
@@ -23,6 +25,7 @@ import Header from './components/Header'
 import Song from './components/Song'
 import data from './components/data'
 import darkenColour from './components/darkenColour'
+import hslToRgb from './components/hslToRgb'
 
 export default {
   name: 'app',
@@ -46,13 +49,37 @@ export default {
   },
   data() {
     return {
-      songs: data.songs,
       animationDelay: 2000,
       animationStep: 100,
-      selectedSong: null
+      selectedSong: null,
+      selectedTag: null
+    }
+  },
+  computed: {
+    songs() {
+      if (this.selectedTag == null) {
+        return data.songs;
+      } else {
+        return data.songs.filter(song => {
+          return song.tag == this.selectedTag;
+        })
+      }
     }
   },
   methods: {
+    selectTag(tag) {
+      this.selectedTag = tag;
+      if (tag === null) {
+        this.randomColour(true);
+      } else {
+        let colour = darkenColour(this.songs[0].colour);
+        document.body.style.backgroundColor = "#" + colour;
+        // this.randomColour(false);
+        document.getElementById("songs").scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    },
     selectSong(id) {
       this.selectedSong = id;
       let colour;
@@ -70,6 +97,19 @@ export default {
       }
       document.body.style.backgroundColor = colour;
       document.getElementById("chrometheme").setAttribute("content", colour)
+    },
+    randomColour(black) {
+        if (black) {
+            document.body.style.backgroundColor = "black";
+            return;
+        }
+        let random = Math.random();
+        let colour = hslToRgb(random, 0.7, 0.35);
+        document.body.style.backgroundColor
+            = `rgb(${colour[0]},${colour[1]},${colour[2]})`;
+    },
+    gnomed() {
+      console.log("⣿⣿⣿⣿⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿⣿⣿⣿⣿⣿⣿\n⣿⣿⣿⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢿⣿⣿⣿⣿⣿⣿\n⣿⣿⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⣿⣿⣿⣿⣿\n⣿⣿⣤⣀⢠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣾⣿⣿⣿⣿⣿\n⣿⣿⣿⡟⣻⣿⣿⣿⣿⣿⣟⠉⠙⢹⣿⣏⠉⢹⣿⣿⣿⣿⣿⣿⣿⣿\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢿⡿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n⣿⣿⠟⠋⠄⣿⣿⣿⣿⣿⣿⣿⣟⡛⠛⢛⣛⣿⣿⣿⣿⣿⣿⣿⣿⣿\n⡟⠁⠄⠄⠄⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n⡇⠄⠄⠄⠄⠄⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠛⠿⠛⠻⣿\n⡇⠄⠄⠄⠄⠄⠄⠘⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠄⠄⠄⠄⣠⣽\n⣇⣀⠄⣀⡀⢀⠄⠄⠄⠄⠙⠛⠛⠿⣿⢿⠿⠟⠛⠄⠄⠄⠄⠈⢿⣿");
     }
   },
 }
@@ -78,6 +118,10 @@ export default {
 <style>
 * {
   font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  cursor: pointer;
 }
 
 body {
