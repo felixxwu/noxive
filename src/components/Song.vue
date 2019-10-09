@@ -63,7 +63,7 @@ export default {
     padding-bottom: 15px;
     padding-right: 30px;
     cursor: pointer;
-    z-index: 1;
+    height: 20px;
 }
 
 img {
