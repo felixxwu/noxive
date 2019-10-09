@@ -8,7 +8,10 @@
             :title="song.title"
             tabindex="0"
         >
-        <div onclick="event.stopPropagation()" @click="selectTag(song.tag)" class="tag">#{{ song.tag }}</div>
+        <div onclick="event.stopPropagation()" @click="selectTag(song.tag)" class="tag">
+            <span class="animated fadeInUp" v-if="number == 0 && welcome">☛</span>
+            #{{ song.tag }}
+        </div>
     </span>
     <div class="selected animated-fast zoomIn shadow" v-else>
         <div v-html="song.embed"></div>
@@ -35,8 +38,9 @@ export default {
     props: {
         song: Object,
         number: Number,
-        selectSong: Function,
         isSelected: Boolean,
+        welcome: Boolean,
+        selectSong: Function,
         selectTag: Function
     }
 }

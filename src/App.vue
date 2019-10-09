@@ -1,20 +1,21 @@
 <template>
   <div id="app">
-    <Header :randomColour="randomColour"></Header>
+    <Header :actions="actions"></Header>
     <h1 @click="selectTag(null)" v-if="selectedTag">filter: #{{ selectedTag }} ×</h1>
     <div id="songs">
       <Song
-        v-for="(song, index) in songs" :key="index"
         :id="index"
         class="song"
+        v-for="(song, index) in songs" :key="index"
         :song="song"
         :number="index"
-        :selectSong="selectSong"
         :isSelected="selectedSong == index"
+        :welcome="welcome"
+        :selectSong="selectSong"
         :selectTag="selectTag"
       ></Song>
     </div>
-    <p @click="gnomed">
+    <p @click="actions.gnome">
       © Noxive {{ (new Date()).getYear() + 1900 }}
     </p>
   </div>
@@ -24,8 +25,7 @@
 import Header from './components/Header'
 import Song from './components/Song'
 import data from './components/data'
-import darkenColour from './components/darkenColour'
-import hslToRgb from './components/hslToRgb'
+import actions from './components/actions'
 
 export default {
   name: 'app',
@@ -53,7 +53,9 @@ export default {
       animationDelay: 2000,
       animationStep: 100,
       selectedSong: null,
-      selectedTag: null
+      selectedTag: null,
+      welcome: true,
+      actions: actions
     }
   },
   computed: {
@@ -70,48 +72,14 @@ export default {
   methods: {
     selectTag(tag) {
       this.selectedTag = tag;
-      if (tag === null) {
-        this.randomColour(true);
-      } else {
-        let colour = darkenColour(this.songs[0].colour);
-        document.body.style.backgroundColor = "#" + colour;
-        // this.randomColour(false);
-        document.getElementById("songs").scrollIntoView({
-          behavior: "smooth"
-        });
-      }
+      this.selectedSong = null;
+      this.welcome = false;
+      actions.tagSelected(tag, this.songs[0]);
     },
     selectSong(id) {
       this.selectedSong = id;
-      let colour;
-      if (id === null) {
-        colour = "black";
-        document.body.style.backgroundColor = "black";
-      } else {
-        colour = "#" + darkenColour(this.songs[id].colour);
-        this.$nextTick(() => {
-          document.getElementById(id).scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          });
-        })
-      }
-      document.body.style.backgroundColor = colour;
-      document.getElementById("chrometheme").setAttribute("content", colour)
+      actions.songSelected(this.songs[id], id);
     },
-    randomColour(black) {
-        if (black) {
-            document.body.style.backgroundColor = "black";
-            return;
-        }
-        let random = Math.random();
-        let colour = hslToRgb(random, 0.7, 0.35);
-        document.body.style.backgroundColor
-            = `rgb(${colour[0]},${colour[1]},${colour[2]})`;
-    },
-    gnomed() {
-      console.log("⣿⣿⣿⣿⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿⣿⣿⣿⣿⣿⣿\n⣿⣿⣿⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢿⣿⣿⣿⣿⣿⣿\n⣿⣿⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⣿⣿⣿⣿⣿\n⣿⣿⣤⣀⢠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣾⣿⣿⣿⣿⣿\n⣿⣿⣿⡟⣻⣿⣿⣿⣿⣿⣟⠉⠙⢹⣿⣏⠉⢹⣿⣿⣿⣿⣿⣿⣿⣿\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢿⡿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n⣿⣿⠟⠋⠄⣿⣿⣿⣿⣿⣿⣿⣟⡛⠛⢛⣛⣿⣿⣿⣿⣿⣿⣿⣿⣿\n⡟⠁⠄⠄⠄⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n⡇⠄⠄⠄⠄⠄⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠛⠿⠛⠻⣿\n⡇⠄⠄⠄⠄⠄⠄⠘⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠄⠄⠄⠄⣠⣽\n⣇⣀⠄⣀⡀⢀⠄⠄⠄⠄⠙⠛⠛⠿⣿⢿⠿⠟⠛⠄⠄⠄⠄⠈⢿⣿");
-    }
   },
 }
 </script>

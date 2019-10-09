@@ -1,6 +1,6 @@
 <template>
     <div id="header">
-        <img @click="randomColour(false)" id="logo" class="animated fadeInUp" src="../assets/logo.svg" alt="Noxive logo">
+        <img @click="actions.randomColour()" id="logo" class="animated fadeInUp" src="../assets/logo.svg" alt="Noxive logo">
         <br>
         <div id="links" class="animated fadeInUp">
             <a id="spotify" :href="data.links.spotify">
@@ -20,7 +20,7 @@
             </a>
         </div>
         <br>
-        <div id="about" @click="expanded = !expanded; randomColour(!expanded)">
+        <div id="about" @click="expanded = !expanded; actions.randomColour(!expanded)">
             <button class="animated-fast fadeInUp shadow" v-if="!expanded">ABOUT</button>
             <div v-else class="animated-fast fadeInUp">
                 Noxive is a solo electronic music producer and computer science student at Edinburgh, with releases ranging from funky disco to sombre piano and bassy dance tunes.
@@ -43,7 +43,10 @@
                     felix@noxive.com
                 </b>
                 <!-- ◆ -->
-                <h1>×</h1>
+                <br>
+                <br>
+                <span style="cursor: pointer;">⛌</span>
+                <!-- <h1>×</h1> -->
             </div>
         </div>
     </div>
@@ -54,7 +57,7 @@ import data from './data'
 
 export default {
     props: {
-        randomColour: Function
+        actions: Object
     },
     created() {
         setTimeout(() => {
@@ -94,7 +97,6 @@ button {
     /* text-decoration: underline; */
     font-weight: bold;
     font-size: medium;
-    height: 40px;
     padding: 10px;
     margin: 30px;
     cursor: pointer;
