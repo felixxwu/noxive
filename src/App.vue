@@ -22,9 +22,9 @@
 </template>
 
 <script>
+import { db } from './db'
 import Header from './components/Header'
 import Song from './components/Song'
-import data from './components/data'
 import actions from './components/actions'
 
 export default {
@@ -34,6 +34,12 @@ export default {
     Song
   },
   created() {
+    db.collection('songs').orderBy('published', 'desc')
+      .get()
+      .then(querySnapshot => {
+        this.allSongs = querySnapshot.docs.map(doc => doc.data())
+      })
+
     setTimeout(() => {
       this.songs.forEach((element, index) => {
         setTimeout(() => {
@@ -43,11 +49,6 @@ export default {
       });
     }, this.animationDelay);
   },
-  updated() {
-    this.songs.forEach((element, index) => {
-      document.getElementById(index).style.opacity = 1;
-    });
-  },
   data() {
     return {
       animationDelay: 2000,
@@ -55,15 +56,16 @@ export default {
       selectedSong: null,
       selectedTag: null,
       welcome: true,
-      actions: actions
+      actions: actions,
+      allSongs: []
     }
   },
   computed: {
     songs() {
       if (this.selectedTag == null) {
-        return data.songs;
+        return this.allSongs;
       } else {
-        return data.songs.filter(song => {
+        return this.allSongs.filter(song => {
           return song.tag == this.selectedTag;
         })
       }
@@ -79,6 +81,11 @@ export default {
     selectSong(id) {
       this.selectedSong = id;
       actions.songSelected(this.songs[id], id);
+      setTimeout(() => {
+        this.songs.forEach((element, index) => {
+          document.getElementById(index).style.opacity = 1;
+        });
+      }, 0);
     },
   },
 }
