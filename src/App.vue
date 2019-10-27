@@ -15,7 +15,7 @@
         :selectTag="selectTag"
       ></Song>
     </div>
-    <p @click="actions.gnome">
+    <p id="copyright" @click="actions.gnome">
       © Noxive {{ (new Date()).getYear() + 1900 }}
     </p>
   </div>
@@ -47,6 +47,7 @@ export default {
           if (el) el.style.opacity = 1;
         }, this.animationStep * index);
       });
+      document.getElementById("copyright").style.display = "initial";
     }, this.animationDelay);
   },
   data() {
@@ -124,6 +125,10 @@ p {
 
 img, .shadow {
   filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.3));
+}
+
+#copyright {
+  display: none;
 }
 
 /* ANIMATECSS ############################################################### */
