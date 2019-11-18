@@ -87,10 +87,10 @@ a {
 }
 
 button {
-    border: 2px white solid;
+    border: none;
     border-radius: 7px;
-    color: white;
-    background-color: transparent;
+    color: black;
+    background-color: white;
     /* text-decoration: underline; */
     font-weight: bold;
     font-size: medium;
