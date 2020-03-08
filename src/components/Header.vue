@@ -45,7 +45,7 @@
                 <!-- ◆ -->
                 <br>
                 <br>
-                <span style="cursor: pointer;">⛌</span>
+                <span style="cursor: pointer; font-size: 50px;">×</span>
                 <!-- <h1>×</h1> -->
             </div>
         </div>

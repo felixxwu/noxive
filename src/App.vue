@@ -33,7 +33,7 @@ export default {
     Header,
     Song
   },
-  created() {
+  mounted() {
     db.collection('songs').orderBy('published', 'desc')
       .get()
       .then(querySnapshot => {
@@ -78,6 +78,13 @@ export default {
       this.selectedSong = null;
       this.welcome = false;
       actions.tagSelected(tag, this.songs[0]);
+
+      this.songs.forEach((element, index) => {
+        setTimeout(() => {
+          let el = document.getElementById(index);
+          if (el) el.style.opacity = 1;
+        }, this.animationStep * index);
+      });
     },
     selectSong(id) {
       this.selectedSong = id;
@@ -112,6 +119,10 @@ body {
 
 p {
   padding: 50px;
+}
+
+#songs {
+  margin-bottom: 50px;
 }
 
 .song {
