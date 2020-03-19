@@ -2,7 +2,7 @@
   <div id="app">
     <Header :actions="actions"></Header>
     <h1 @click="selectTag(null)" v-if="selectedTag">filter: #{{ selectedTag }} ×</h1>
-    <div id="songs">
+    <div id="songs" v-if="allSongs.length !== 0">
       <Song
         :id="index"
         class="song"
@@ -15,6 +15,9 @@
         :selectTag="selectTag"
       ></Song>
     </div>
+    <p v-else>
+      Loading...
+    </p>
     <p id="copyright" @click="actions.gnome">
       © Noxive {{ (new Date()).getYear() + 1900 }}
     </p>
@@ -34,25 +37,29 @@ export default {
     Song
   },
   mounted() {
+    // console.log(location.hash)
     db.collection('songs').orderBy('published', 'desc')
       .get()
       .then(querySnapshot => {
         this.allSongs = querySnapshot.docs.map(doc => doc.data())
+        setTimeout(() => {
+          this.songs.forEach((element, index) => {
+            setTimeout(() => {
+              let el = document.getElementById(index);
+              if (el) el.style.opacity = 1;
+            }, this.animationStep * index);
+          });
+          document.getElementById("copyright").style.display = "initial";
+          setTimeout(() => {
+            location.hash && this.selectSongByHash(location.hash.substr(1))
+          }, 500);
+        }, this.animationDelay);
       })
 
-    setTimeout(() => {
-      this.songs.forEach((element, index) => {
-        setTimeout(() => {
-          let el = document.getElementById(index);
-          if (el) el.style.opacity = 1;
-        }, this.animationStep * index);
-      });
-      document.getElementById("copyright").style.display = "initial";
-    }, this.animationDelay);
   },
   data() {
     return {
-      animationDelay: 2000,
+      animationDelay: 1000,
       animationStep: 100,
       selectedSong: null,
       selectedTag: null,
@@ -88,12 +95,23 @@ export default {
     },
     selectSong(id) {
       this.selectedSong = id;
+      if (id == null) {
+        history.replaceState(null, null, ' ');
+      } else {
+        location.hash = this.songs[id].hash
+      }
       actions.songSelected(this.songs[id], id);
       setTimeout(() => {
         this.songs.forEach((element, index) => {
           document.getElementById(index).style.opacity = 1;
         });
       }, 0);
+    },
+    selectSongByHash(hash) {
+      const id = this.songs.findIndex(song => song.hash === hash)
+      // console.log(this.songs)
+      // console.log({id})
+      this.selectSong(id)
     },
   },
 }
@@ -115,6 +133,11 @@ body {
   color: white;
   text-align: center;
   transition: 1s;
+}
+
+#app {
+  max-width: 1200px;
+  margin: auto;
 }
 
 p {
