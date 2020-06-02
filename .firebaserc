@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "noxive"
+  },
+  "targets": {
+    "noxive": {
+      "hosting": {
+        "noxive": [
+          "dist"
+        ]
+      }
+    }
+  }
+}

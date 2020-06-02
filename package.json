@@ -11,7 +11,8 @@
     "core-js": "^2.6.5",
     "firebase": "^7.2.0",
     "vue": "^2.6.10",
-    "vuefire": "^2.2.0"
+    "vuefire": "^2.2.0",
+    "yarn": "^1.22.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
