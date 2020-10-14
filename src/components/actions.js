@@ -4,7 +4,7 @@ import darkenColour from './darkenColour'
 export default {
   tagSelected(tag, firstSong) {
     if (tag === null) {
-      this.setColour("black");
+      this.setColour("var(--black)");
     } else {
       let colour = darkenColour(firstSong.colour);
       this.setColour("#" + colour);
@@ -15,7 +15,7 @@ export default {
   },
   songSelected(song, id) {
     if (id === null) {
-      this.setColour("black");
+      this.setColour("var(--black)");
     } else {
       let colour = "#" + darkenColour(song.colour);
       this.setColour(colour);
@@ -29,7 +29,7 @@ export default {
   },
   randomColour(setBlack) {
     if (setBlack) {
-      this.setColour("black");
+      this.setColour("var(--black)");
       return;
     }
     let random = Math.random();

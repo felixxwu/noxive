@@ -120,6 +120,7 @@ export default {
 <style>
 * {
   font-family: 'Montserrat', sans-serif;
+  --black: #1a1a1a;
 }
 
 h1 {
@@ -129,7 +130,7 @@ h1 {
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: var(--black);
   color: white;
   text-align: center;
   transition: 1s;
