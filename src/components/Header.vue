@@ -23,7 +23,7 @@
         <div id="about" @click="expanded = !expanded; actions.randomColour(!expanded)">
             <button class="animated-fast fadeInUp shadow" v-if="!expanded">ABOUT</button>
             <div v-else class="animated-fast fadeInUp">
-                Noxive is a solo electronic music producer and computer science student at Edinburgh, with releases ranging from funky disco to sombre piano and bassy dance tunes.
+                Noxive is a solo electronic music producer and full time software developer, with releases ranging from funky disco to sombre piano and bassy dance tunes.
                 <br>
                 <br>
                 He has made numerous appearances on labels and YouTube channels such as
