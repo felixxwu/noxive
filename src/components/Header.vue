@@ -12,10 +12,10 @@
             <a id="soundcloud" href="https://soundcloud.com/noxive">
                 <img class="link" src="../assets/soundcloud.svg" alt="soundcloud logo" title="SoundCloud">
             </a>
-            <a id="youtube" href="https://www.youtube.com/playlist?list=PLOZyhPV9JCou47tEa6AA-5LXXFXTK3y5m">
+            <a id="youtube" href="https://youtube.com/noxive">
                 <img class="link" src="../assets/youtube.svg" alt="youtube logo" title="YouTube">
             </a>
-            <a id="facebook" href="https://www.facebook.com/noxive">
+            <a id="facebook" href="https://facebook.com/noxive">
                 <img class="link" src="../assets/facebook.svg" alt="facebook logo" title="Facebook">
             </a>
         </div>
